@@ -21,8 +21,28 @@
 
 - (IBAction)onRegisterWithFacebookTapped:(id)sender
 {
+    NSArray *permissionsArray = @[ @"user_about_me", @"user_relationships", @"user_birthday", @"user_location"];
+    [PFFacebookUtils initializeFacebook];
+    
 
-}
+    // Login PFUser using Facebook
+    [PFFacebookUtils logInWithPermissions:permissionsArray block:^(PFUser *user, NSError *error) {
+      //  [_activityIndicator stopAnimating]; // Hide loading indicator
+        
+        if (!user) {
+            if (!error) {
+                NSLog(@"Uh oh. The user cancelled the Facebook login.");
+            } else {
+                NSLog(@"Uh oh. An error occurred: %@", error);
+            }
+        } else if (user.isNew) {
+            NSLog(@"User with facebook signed up and logged in!");
+    //        [self.navigationController pushViewController:[[UserDetailsViewController alloc] initWithStyle:UITableViewStyleGrouped] animated:YES];
+        } else {
+            NSLog(@"User with facebook logged in!");
+    //        [self.navigationController pushViewController:[[UserDetailsViewController alloc] initWithStyle:UITableViewStyleGrouped] animated:YES];
+        }
+    }];}
 
 
 
