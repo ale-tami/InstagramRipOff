@@ -73,6 +73,10 @@ A Parse Framework User Object that is a local representation of a user persisted
 /// The email for the PFUser.
 @property (nonatomic, strong) NSString *email;
 
+/// profilePicture.
+@property (nonatomic, strong) NSData * profilePicture;
+
+
 /*!
  Signs up the user. Make sure that password and username are set. This will also enforce that the username isn't already taken. 
  @result Returns true if the sign up was successful.
