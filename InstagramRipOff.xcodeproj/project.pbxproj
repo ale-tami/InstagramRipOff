@@ -32,10 +32,15 @@
 		4DAFADC719A382AB00B46DB5 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DAFADC619A382AB00B46DB5 /* StoreKit.framework */; };
 		4DAFADC919A382B300B46DB5 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DAFADC819A382B300B46DB5 /* SystemConfiguration.framework */; };
 		4DAFADCB19A382C400B46DB5 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DAFADCA19A382C400B46DB5 /* CoreLocation.framework */; };
+		DF312BFD19A3E12A0001D75A /* FeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF312BFC19A3E12A0001D75A /* FeedViewController.m */; };
+		DF312C0019A3E19E0001D75A /* FeedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DF312BFF19A3E19E0001D75A /* FeedTableViewCell.m */; };
+		DF312C0319A3ED340001D75A /* ExploreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF312C0219A3ED340001D75A /* ExploreViewController.m */; };
+		DF312C0619A3ED950001D75A /* TakePhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF312C0519A3ED950001D75A /* TakePhotoViewController.m */; };
+		DF312C0919A3EDFB0001D75A /* FollowingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF312C0819A3EDFB0001D75A /* FollowingViewController.m */; };
+		DF312C0C19A3EE700001D75A /* MyPhotosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF312C0B19A3EE700001D75A /* MyPhotosViewController.m */; };
+		DF6F43DE19A3AB7C00F1AAF8 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF6F43DD19A3AB7C00F1AAF8 /* Parse.framework */; };
 		DF6F43E119A3AC7200F1AAF8 /* RegisterEmailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF6F43E019A3AC7200F1AAF8 /* RegisterEmailViewController.m */; };
 		DF6F43E419A3AC8800F1AAF8 /* LogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF6F43E319A3AC8800F1AAF8 /* LogInViewController.m */; };
-		DF6F43E619A3CC5600F1AAF8 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF6F43E519A3CC5600F1AAF8 /* Parse.framework */; };
-		DF6F43E819A3CCD100F1AAF8 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF6F43E719A3CCD100F1AAF8 /* Accounts.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,12 +84,23 @@
 		4DAFADC619A382AB00B46DB5 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		4DAFADC819A382B300B46DB5 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		4DAFADCA19A382C400B46DB5 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		DF312BFB19A3E12A0001D75A /* FeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedViewController.h; sourceTree = "<group>"; };
+		DF312BFC19A3E12A0001D75A /* FeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedViewController.m; sourceTree = "<group>"; };
+		DF312BFE19A3E19E0001D75A /* FeedTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedTableViewCell.h; sourceTree = "<group>"; };
+		DF312BFF19A3E19E0001D75A /* FeedTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedTableViewCell.m; sourceTree = "<group>"; };
+		DF312C0119A3ED340001D75A /* ExploreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExploreViewController.h; sourceTree = "<group>"; };
+		DF312C0219A3ED340001D75A /* ExploreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExploreViewController.m; sourceTree = "<group>"; };
+		DF312C0419A3ED950001D75A /* TakePhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TakePhotoViewController.h; sourceTree = "<group>"; };
+		DF312C0519A3ED950001D75A /* TakePhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TakePhotoViewController.m; sourceTree = "<group>"; };
+		DF312C0719A3EDFB0001D75A /* FollowingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FollowingViewController.h; sourceTree = "<group>"; };
+		DF312C0819A3EDFB0001D75A /* FollowingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FollowingViewController.m; sourceTree = "<group>"; };
+		DF312C0A19A3EE700001D75A /* MyPhotosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyPhotosViewController.h; sourceTree = "<group>"; };
+		DF312C0B19A3EE700001D75A /* MyPhotosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyPhotosViewController.m; sourceTree = "<group>"; };
+		DF6F43DD19A3AB7C00F1AAF8 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		DF6F43DF19A3AC7200F1AAF8 /* RegisterEmailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterEmailViewController.h; sourceTree = "<group>"; };
 		DF6F43E019A3AC7200F1AAF8 /* RegisterEmailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterEmailViewController.m; sourceTree = "<group>"; };
 		DF6F43E219A3AC8800F1AAF8 /* LogInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogInViewController.h; sourceTree = "<group>"; };
 		DF6F43E319A3AC8800F1AAF8 /* LogInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogInViewController.m; sourceTree = "<group>"; };
-		DF6F43E519A3CC5600F1AAF8 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
-		DF6F43E719A3CCD100F1AAF8 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,12 +108,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF6F43E819A3CCD100F1AAF8 /* Accounts.framework in Frameworks */,
 				4DAFADCB19A382C400B46DB5 /* CoreLocation.framework in Frameworks */,
 				4DAFADC919A382B300B46DB5 /* SystemConfiguration.framework in Frameworks */,
 				4DAFADC719A382AB00B46DB5 /* StoreKit.framework in Frameworks */,
 				4DAFADC519A382A000B46DB5 /* Security.framework in Frameworks */,
-				DF6F43E619A3CC5600F1AAF8 /* Parse.framework in Frameworks */,
+				DF6F43DE19A3AB7C00F1AAF8 /* Parse.framework in Frameworks */,
 				4DAFADC319A3828B00B46DB5 /* MobileCoreServices.framework in Frameworks */,
 				4DAFADC119A3821700B46DB5 /* QuartzCore.framework in Frameworks */,
 				4DAFADBF19A3815C00B46DB5 /* libz.dylib in Frameworks */,
@@ -146,7 +161,6 @@
 		4DAFAD8019A3810400B46DB5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				DF6F43E719A3CCD100F1AAF8 /* Accounts.framework */,
 				4DAFADCA19A382C400B46DB5 /* CoreLocation.framework */,
 				4DAFADC819A382B300B46DB5 /* SystemConfiguration.framework */,
 				4DAFADC619A382AB00B46DB5 /* StoreKit.framework */,
@@ -172,6 +186,18 @@
 				4DAFAD9019A3810400B46DB5 /* AppDelegate.h */,
 				4DAFAD9119A3810400B46DB5 /* AppDelegate.m */,
 				4DAFAD9319A3810400B46DB5 /* Main.storyboard */,
+				DF312C0A19A3EE700001D75A /* MyPhotosViewController.h */,
+				DF312C0B19A3EE700001D75A /* MyPhotosViewController.m */,
+				DF312C0719A3EDFB0001D75A /* FollowingViewController.h */,
+				DF312C0819A3EDFB0001D75A /* FollowingViewController.m */,
+				DF312C0419A3ED950001D75A /* TakePhotoViewController.h */,
+				DF312C0519A3ED950001D75A /* TakePhotoViewController.m */,
+				DF312C0119A3ED340001D75A /* ExploreViewController.h */,
+				DF312C0219A3ED340001D75A /* ExploreViewController.m */,
+				DF312BFE19A3E19E0001D75A /* FeedTableViewCell.h */,
+				DF312BFF19A3E19E0001D75A /* FeedTableViewCell.m */,
+				DF312BFB19A3E12A0001D75A /* FeedViewController.h */,
+				DF312BFC19A3E12A0001D75A /* FeedViewController.m */,
 				DF6F43DF19A3AC7200F1AAF8 /* RegisterEmailViewController.h */,
 				DF6F43E019A3AC7200F1AAF8 /* RegisterEmailViewController.m */,
 				DF6F43E219A3AC8800F1AAF8 /* LogInViewController.h */,
@@ -187,7 +213,7 @@
 		4DAFAD8819A3810400B46DB5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				DF6F43E519A3CC5600F1AAF8 /* Parse.framework */,
+				DF6F43DD19A3AB7C00F1AAF8 /* Parse.framework */,
 				4DAFAD8919A3810400B46DB5 /* InstagramRipOff-Info.plist */,
 				4DAFAD8A19A3810400B46DB5 /* InfoPlist.strings */,
 				4DAFAD8D19A3810400B46DB5 /* main.m */,
@@ -311,10 +337,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF312C0319A3ED340001D75A /* ExploreViewController.m in Sources */,
 				DF6F43E119A3AC7200F1AAF8 /* RegisterEmailViewController.m in Sources */,
 				4DAFAD9819A3810400B46DB5 /* RootViewController.m in Sources */,
 				DF6F43E419A3AC8800F1AAF8 /* LogInViewController.m in Sources */,
+				DF312C0C19A3EE700001D75A /* MyPhotosViewController.m in Sources */,
 				4DAFAD9219A3810400B46DB5 /* AppDelegate.m in Sources */,
+				DF312C0019A3E19E0001D75A /* FeedTableViewCell.m in Sources */,
+				DF312C0919A3EDFB0001D75A /* FollowingViewController.m in Sources */,
+				DF312BFD19A3E12A0001D75A /* FeedViewController.m in Sources */,
+				DF312C0619A3ED950001D75A /* TakePhotoViewController.m in Sources */,
 				4DAFAD8E19A3810400B46DB5 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
