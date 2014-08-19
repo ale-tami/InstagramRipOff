@@ -8,42 +8,63 @@
 
 #import "TakePhotoViewController.h"
 
-@interface TakePhotoViewController ()
-
+@interface TakePhotoViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@property NSArray *user;
+@property UIImagePickerController *picker;
 @end
 
 @implementation TakePhotoViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
+    self.picker = [UIImagePickerController new];
+    self.picker.delegate = self;
+    self.picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+
 }
 
-- (void)didReceiveMemoryWarning
+-(void)viewDidAppear:(BOOL)animated
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [super viewDidAppear:animated];
+
+    PFQuery *query = [PFQuery queryWithClassName:@"User"];
+//    [query whereKey:@"username" equalTo:@"cmeats"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (error) {
+            NSLog(@"%@", [error userInfo]);
+        } else {
+            NSLog(@"%@", objects);
+    //        self.user = objects[0];
+            [self presentViewController:self.picker animated:YES completion:nil];
+        }
+    }];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+#pragma mark -- UIImagePickerController Delegates
+-(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    PFObject *feedItem = [PFObject objectWithClassName:@"FeedItem"];
+    // [info objectForKey:UIImagePickerControllerOriginalImage];
+    NSData *imageData = UIImagePNGRepresentation([info objectForKey:UIImagePickerControllerOriginalImage]);
+    PFFile *imageFile = [PFFile fileWithName:@"feedPhoto" data:imageData];
+    feedItem[@"feedPhoto"] = imageFile;
+    [feedItem saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (error) {
+            NSLog(@"%@", [error userInfo]);
+        } else {
+            [self dismissViewControllerAnimated:YES completion:nil];
+            self.tabBarController.selectedIndex = 1;
+        }
+    }];
+
+//    [self dismissViewControllerAnimated:YES completion:nil];
 }
-*/
+
+-(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 @end
