@@ -21,7 +21,10 @@
     [super viewDidLoad];
 }
 
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> 729156a8bc4d2871d373ca92e5ea79a64003acbf
 @end
