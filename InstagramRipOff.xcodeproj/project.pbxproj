@@ -32,7 +32,9 @@
 		4DAFADC719A382AB00B46DB5 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DAFADC619A382AB00B46DB5 /* StoreKit.framework */; };
 		4DAFADC919A382B300B46DB5 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DAFADC819A382B300B46DB5 /* SystemConfiguration.framework */; };
 		4DAFADCB19A382C400B46DB5 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DAFADCA19A382C400B46DB5 /* CoreLocation.framework */; };
-		4DAFADCD19A382FF00B46DB5 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DAFADCC19A382FF00B46DB5 /* Parse.framework */; };
+		DF6F43DE19A3AB7C00F1AAF8 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF6F43DD19A3AB7C00F1AAF8 /* Parse.framework */; };
+		DF6F43E119A3AC7200F1AAF8 /* RegisterEmailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF6F43E019A3AC7200F1AAF8 /* RegisterEmailViewController.m */; };
+		DF6F43E419A3AC8800F1AAF8 /* LogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF6F43E319A3AC8800F1AAF8 /* LogInViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,7 +78,11 @@
 		4DAFADC619A382AB00B46DB5 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		4DAFADC819A382B300B46DB5 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		4DAFADCA19A382C400B46DB5 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		4DAFADCC19A382FF00B46DB5 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		DF6F43DD19A3AB7C00F1AAF8 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		DF6F43DF19A3AC7200F1AAF8 /* RegisterEmailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterEmailViewController.h; sourceTree = "<group>"; };
+		DF6F43E019A3AC7200F1AAF8 /* RegisterEmailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterEmailViewController.m; sourceTree = "<group>"; };
+		DF6F43E219A3AC8800F1AAF8 /* LogInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogInViewController.h; sourceTree = "<group>"; };
+		DF6F43E319A3AC8800F1AAF8 /* LogInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogInViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,7 +94,7 @@
 				4DAFADC919A382B300B46DB5 /* SystemConfiguration.framework in Frameworks */,
 				4DAFADC719A382AB00B46DB5 /* StoreKit.framework in Frameworks */,
 				4DAFADC519A382A000B46DB5 /* Security.framework in Frameworks */,
-				4DAFADCD19A382FF00B46DB5 /* Parse.framework in Frameworks */,
+				DF6F43DE19A3AB7C00F1AAF8 /* Parse.framework in Frameworks */,
 				4DAFADC319A3828B00B46DB5 /* MobileCoreServices.framework in Frameworks */,
 				4DAFADC119A3821700B46DB5 /* QuartzCore.framework in Frameworks */,
 				4DAFADBF19A3815C00B46DB5 /* libz.dylib in Frameworks */,
@@ -162,6 +168,10 @@
 				4DAFAD9019A3810400B46DB5 /* AppDelegate.h */,
 				4DAFAD9119A3810400B46DB5 /* AppDelegate.m */,
 				4DAFAD9319A3810400B46DB5 /* Main.storyboard */,
+				DF6F43DF19A3AC7200F1AAF8 /* RegisterEmailViewController.h */,
+				DF6F43E019A3AC7200F1AAF8 /* RegisterEmailViewController.m */,
+				DF6F43E219A3AC8800F1AAF8 /* LogInViewController.h */,
+				DF6F43E319A3AC8800F1AAF8 /* LogInViewController.m */,
 				4DAFAD9619A3810400B46DB5 /* RootViewController.h */,
 				4DAFAD9719A3810400B46DB5 /* RootViewController.m */,
 				4DAFAD9919A3810400B46DB5 /* Images.xcassets */,
@@ -173,7 +183,7 @@
 		4DAFAD8819A3810400B46DB5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				4DAFADCC19A382FF00B46DB5 /* Parse.framework */,
+				DF6F43DD19A3AB7C00F1AAF8 /* Parse.framework */,
 				4DAFAD8919A3810400B46DB5 /* InstagramRipOff-Info.plist */,
 				4DAFAD8A19A3810400B46DB5 /* InfoPlist.strings */,
 				4DAFAD8D19A3810400B46DB5 /* main.m */,
@@ -297,7 +307,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF6F43E119A3AC7200F1AAF8 /* RegisterEmailViewController.m in Sources */,
 				4DAFAD9819A3810400B46DB5 /* RootViewController.m in Sources */,
+				DF6F43E419A3AC8800F1AAF8 /* LogInViewController.m in Sources */,
 				4DAFAD9219A3810400B46DB5 /* AppDelegate.m in Sources */,
 				4DAFAD8E19A3810400B46DB5 /* main.m in Sources */,
 			);

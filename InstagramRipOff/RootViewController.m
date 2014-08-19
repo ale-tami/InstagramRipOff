@@ -19,6 +19,10 @@
     [super viewDidLoad];
 }
 
+- (IBAction)onRegisterWithFacebookTapped:(id)sender
+{
+
+}
 
 
 
