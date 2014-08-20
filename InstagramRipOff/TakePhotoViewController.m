@@ -29,17 +29,18 @@
 {
     [super viewDidAppear:animated];
 
-    PFQuery *query = [PFQuery queryWithClassName:@"User"];
-    [query whereKey:@"username" equalTo:@"cmeats"];
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        if (error) {
-            NSLog(@"%@", [error userInfo]);
-        } else {
-            NSLog(@"%@", objects);
-    //        self.user = objects[0];
-            [self presentViewController:self.picker animated:YES completion:nil];
-        }
-    }];
+//    PFQuery *query = [PFQuery queryWithClassName:@"User"];
+//    [query whereKey:@"username" equalTo:@"cmeats"];
+//    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+//        if (error) {
+//            NSLog(@"%@", [error userInfo]);
+//        } else {
+//            NSLog(@"%@", objects);
+//    //        self.user = objects[0];
+//            [self presentViewController:self.picker animated:YES completion:nil];
+//        }
+//    }];
+    [self presentViewController:self.picker animated:YES completion:nil];
 }
 
 #pragma mark -- UIImagePickerController Delegates
@@ -50,6 +51,7 @@
     NSData *imageData = UIImagePNGRepresentation([info objectForKey:UIImagePickerControllerOriginalImage]);
     PFFile *imageFile = [PFFile fileWithName:@"feedPhoto" data:imageData];
     feedItem[@"feedPhoto"] = imageFile;
+    feedItem[@"user"] = [PFUser currentUser];
     [feedItem saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (error) {
             NSLog(@"%@", [error userInfo]);
