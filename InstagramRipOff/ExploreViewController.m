@@ -8,31 +8,39 @@
 
 #import "ExploreViewController.h"
 
-@interface ExploreViewController ()
+@interface ExploreViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
+
+@property NSArray *users;
 
 @end
 
 @implementation ExploreViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    PFQuery *query = [PFQuery queryWithClassName:@"User"];
+    
+    self.users = [query findObjects];
     // Do any additional setup after loading the view.
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+
+
+
+
+- (NSInteger) collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    return self.users.count;
 }
 
 /*
