@@ -7,8 +7,11 @@
 //
 
 #import "ExploreViewController.h"
+#import "ExploreCollectionViewCell.h"
 
 @interface ExploreViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
+
+@property (strong, nonatomic) IBOutlet UICollectionView *exploreCollectionView;
 
 @property NSArray *users;
 
@@ -35,14 +38,23 @@
 }
 
 
-
-
-
 - (NSInteger) collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
     return self.users.count;
 }
 
+- (UICollectionViewCell*) collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    ExploreCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"exploreCell" forIndexPath:indexPath];
+    
+    PFUser *user = [self.users objectAtIndex:indexPath.row];
+    
+   // PFFile *file = [user objectForKey:@"profilePicture"];
+    
+    [cell.backgroundView addSubview: [[UIImageView alloc] initWithImage: [UIImage imageWithData:[user objectForKey:@"profilePicture"]]] ];
+    
+    return cell;
+}
 /*
 #pragma mark - Navigation
 
