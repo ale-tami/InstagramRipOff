@@ -9,6 +9,7 @@
 #import "MyPhotosViewController.h"
 
 @interface MyPhotosViewController ()
+@property (strong, nonatomic) IBOutlet UICollectionView *myPhotosCollectionView;
 
 @end
 
