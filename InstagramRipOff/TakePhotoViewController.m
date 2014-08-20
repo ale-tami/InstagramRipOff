@@ -30,7 +30,7 @@
     [super viewDidAppear:animated];
 
     PFQuery *query = [PFQuery queryWithClassName:@"User"];
-//    [query whereKey:@"username" equalTo:@"cmeats"];
+    [query whereKey:@"username" equalTo:@"cmeats"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (error) {
             NSLog(@"%@", [error userInfo]);

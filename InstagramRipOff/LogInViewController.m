@@ -20,6 +20,14 @@
 {
     [super viewDidLoad];
 }
+- (IBAction)onDidExitTextField:(UITextField *)sender
+{
+    
+}
 
+- (IBAction)onLoggedInTapped:(UIButton *)sender
+{
+
+}
 
 @end
