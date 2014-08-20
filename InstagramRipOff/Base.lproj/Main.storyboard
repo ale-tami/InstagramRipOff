@@ -348,7 +348,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xNV-io-2Yi">
-                                <rect key="frame" x="123" y="157" width="74" height="30"/>
+                                <rect key="frame" x="230" y="103" width="74" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Add Photo">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -358,30 +358,41 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NQV-Y2-TxM">
-                                <rect key="frame" x="112" y="73" width="96" height="76"/>
+                                <rect key="frame" x="116" y="74" width="88" height="88"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oTy-tx-NaB">
-                                <rect key="frame" x="13" y="269" width="287" height="30"/>
+                                <rect key="frame" x="17" y="170" width="287" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next"/>
-                                <connections>
-                                    <action selector="onExitTextField:" destination="kUZ-YM-rjA" eventType="editingDidEndOnExit" id="cJP-EC-HtW"/>
-                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Create a username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zJf-ig-IK9">
-                                <rect key="frame" x="13" y="307" width="287" height="30"/>
+                                <rect key="frame" x="17" y="213" width="287" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="next"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Create a password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GZj-6y-zTP">
-                                <rect key="frame" x="13" y="345" width="287" height="30"/>
+                                <rect key="frame" x="17" y="251" width="287" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <connections>
+                                    <action selector="onRegister:" destination="kUZ-YM-rjA" eventType="editingDidEndOnExit" id="A3S-0p-RpP"/>
+                                </connections>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uSW-Vj-bWl">
+                                <rect key="frame" x="242" y="289" width="57" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Register">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onRegister:" destination="kUZ-YM-rjA" eventType="touchUpInside" id="ksk-4m-z9i"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -390,7 +401,7 @@
                         <outlet property="userEmailField" destination="oTy-tx-NaB" id="fFj-fs-h4a"/>
                         <outlet property="userImage" destination="NQV-Y2-TxM" id="PZL-sR-P4Y"/>
                         <outlet property="userPasswordField" destination="GZj-6y-zTP" id="EG3-Oq-NXi"/>
-                        <outlet property="usernameField" destination="zJf-ig-IK9" id="nHa-wq-qZN"/>
+                        <outlet property="usernameField" destination="zJf-ig-IK9" id="rui-Jz-HCP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T6E-rb-fJr" userLabel="First Responder" sceneMemberID="firstResponder"/>

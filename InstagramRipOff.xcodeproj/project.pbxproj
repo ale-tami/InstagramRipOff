@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4D7D712019A3F48C0042E9BB /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D7D711F19A3F48C0042E9BB /* FacebookSDK.framework */; };
+		37FE038619A41CF300EB8B94 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37FE038519A41CF300EB8B94 /* FacebookSDK.framework */; };
 		4DAFAD8219A3810400B46DB5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DAFAD8119A3810400B46DB5 /* Foundation.framework */; };
 		4DAFAD8419A3810400B46DB5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DAFAD8319A3810400B46DB5 /* CoreGraphics.framework */; };
 		4DAFAD8619A3810400B46DB5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DAFAD8519A3810400B46DB5 /* UIKit.framework */; };
@@ -55,7 +55,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4D7D711F19A3F48C0042E9BB /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../Documents/FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
+		37FE038519A41CF300EB8B94 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		4DAFAD7E19A3810400B46DB5 /* InstagramRipOff.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstagramRipOff.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DAFAD8119A3810400B46DB5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4DAFAD8319A3810400B46DB5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -110,7 +110,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4D7D712019A3F48C0042E9BB /* FacebookSDK.framework in Frameworks */,
 				4DAFADCB19A382C400B46DB5 /* CoreLocation.framework in Frameworks */,
 				4DAFADC919A382B300B46DB5 /* SystemConfiguration.framework in Frameworks */,
 				4DAFADC719A382AB00B46DB5 /* StoreKit.framework in Frameworks */,
@@ -118,6 +117,7 @@
 				DF6F43DE19A3AB7C00F1AAF8 /* Parse.framework in Frameworks */,
 				4DAFADC319A3828B00B46DB5 /* MobileCoreServices.framework in Frameworks */,
 				4DAFADC119A3821700B46DB5 /* QuartzCore.framework in Frameworks */,
+				37FE038619A41CF300EB8B94 /* FacebookSDK.framework in Frameworks */,
 				4DAFADBF19A3815C00B46DB5 /* libz.dylib in Frameworks */,
 				4DAFADBD19A3812C00B46DB5 /* CoreAudio.framework in Frameworks */,
 				4DAFADBB19A3812700B46DB5 /* CFNetwork.framework in Frameworks */,
@@ -164,7 +164,7 @@
 		4DAFAD8019A3810400B46DB5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4D7D711F19A3F48C0042E9BB /* FacebookSDK.framework */,
+				37FE038519A41CF300EB8B94 /* FacebookSDK.framework */,
 				4DAFADCA19A382C400B46DB5 /* CoreLocation.framework */,
 				4DAFADC819A382B300B46DB5 /* SystemConfiguration.framework */,
 				4DAFADC619A382AB00B46DB5 /* StoreKit.framework */,
@@ -481,6 +481,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/InstagramRipOff",
 					/Users/alejandrotami/Documents/FacebookSDK,
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "InstagramRipOff/InstagramRipOff-Prefix.pch";
@@ -499,6 +500,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/InstagramRipOff",
 					/Users/alejandrotami/Documents/FacebookSDK,
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "InstagramRipOff/InstagramRipOff-Prefix.pch";
