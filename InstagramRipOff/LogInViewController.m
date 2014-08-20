@@ -20,10 +20,19 @@
 {
     [super viewDidLoad];
     
+}
+
+- (void) viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:YES];
+    
     if ([PFUser currentUser] && [[PFUser currentUser] isAuthenticated]) {
         NSLog(@"Authenticated");
+        [self performSegueWithIdentifier:@"segueToFeed" sender:self];
     }
+
 }
+
 - (IBAction)onDidExitTextField:(UITextField *)sender
 {
     
@@ -31,7 +40,18 @@
 
 - (IBAction)onLoggedInTapped:(UIButton *)sender
 {
+    PFUser * user = [PFUser logInWithUsername:self.usernameField.text password:self.passwordField.text];
+    if (!user) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Nope"
+                                                        message:@"Wrong user/password"
+                                                       delegate:self
+                                              cancelButtonTitle:@"Bummer... ok"
+                                              otherButtonTitles:nil];
+        [alert show];
 
+    } else {
+        [self performSegueWithIdentifier:@"segueToFeed" sender:self];
+    }
 }
 
 @end

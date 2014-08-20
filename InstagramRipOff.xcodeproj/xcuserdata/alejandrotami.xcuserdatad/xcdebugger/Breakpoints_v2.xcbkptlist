@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "InstagramRipOff/RootViewController.m"
-            timestampString = "430235072.580567"
+            timestampString = "430242732.53938"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
             landmarkName = "-requestForFbUser:"
             landmarkType = "5">
          </BreakpointContent>

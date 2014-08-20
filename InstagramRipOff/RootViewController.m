@@ -19,6 +19,19 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+}
+
+
+- (void) viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:YES];
+    
+    if ([PFUser currentUser] && [[PFUser currentUser] isAuthenticated]) {
+        NSLog(@"Authenticated");
+        [self performSegueWithIdentifier:@"rootToLoginSeg" sender:self];
+    }
+    
 }
 
 - (IBAction)onRegisterWithFacebookTapped:(id)sender
