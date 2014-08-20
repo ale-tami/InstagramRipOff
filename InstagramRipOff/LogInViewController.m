@@ -24,6 +24,14 @@
         NSLog(@"Authenticated");
     }
 }
+- (IBAction)onDidExitTextField:(UITextField *)sender
+{
+    
+}
 
+- (IBAction)onLoggedInTapped:(UIButton *)sender
+{
+
+}
 
 @end
