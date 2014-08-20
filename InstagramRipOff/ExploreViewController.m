@@ -9,6 +9,7 @@
 #import "ExploreViewController.h"
 
 @interface ExploreViewController ()
+@property (strong, nonatomic) IBOutlet UICollectionView *exploreCollectionView;
 
 @end
 

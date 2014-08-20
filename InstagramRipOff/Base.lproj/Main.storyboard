@@ -171,6 +171,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Explore" id="GHK-ke-dLb"/>
+                    <connections>
+                        <outlet property="exploreCollectionView" destination="kIC-YU-TJm" id="Zh4-Q5-Qjn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lSy-oi-r1X" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
