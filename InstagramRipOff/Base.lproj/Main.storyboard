@@ -162,6 +162,10 @@
                                         </view>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="ILz-ec-zan" id="zzg-2b-MJN"/>
+                                    <outlet property="delegate" destination="ILz-ec-zan" id="hCy-In-ddQ"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
