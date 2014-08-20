@@ -19,6 +19,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    if ([PFUser currentUser] && [[PFUser currentUser] isAuthenticated]) {
+        NSLog(@"Authenticated");
+    }
 }
 - (IBAction)onDidExitTextField:(UITextField *)sender
 {
