@@ -45,7 +45,7 @@
     NSData *imageData = UIImagePNGRepresentation([info objectForKey:UIImagePickerControllerOriginalImage]);
     PFFile *imageFile = [PFFile fileWithName:@"feedPhoto" data:imageData];
     feedItem[@"feedPhoto"] = imageFile;
-    feedItem[@"user"] = [PFUser currentUser];
+    feedItem[@"user"] = [PFUser currentUser].objectId;
     feedItem[@"description"] = self.photoDescription.text;
     [feedItem saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (error) {
