@@ -12,6 +12,7 @@
 @interface ExploreViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UICollectionView *exploreCollectionView;
+@property (strong, nonatomic) IBOutlet UISearchBar *searchExplore;
 
 @property NSArray *users;
 
