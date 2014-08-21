@@ -34,7 +34,7 @@
     PFUser *currentUser = [ PFUser currentUser];
     
     PFQuery *query = [PFQuery queryWithClassName:@"FeedItem"];
-    [query whereKey:@"user" equalTo:currentUser];
+    [query whereKey:@"user" equalTo:currentUser.objectId];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         
         if (!error) {

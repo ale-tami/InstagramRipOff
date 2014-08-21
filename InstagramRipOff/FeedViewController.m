@@ -43,7 +43,7 @@
             cell.feedImage.image = [UIImage imageWithData:data];
         }
     }];
-    PFUser *user = feedItem[@"user"];
+  //  PFUser *user = feedItem[@"user"];
     return cell;
 }
 
@@ -70,8 +70,13 @@
     PFQuery *query2 = [PFUser query];
     [query2 whereKey:@"objectId" matchesKey:@"followed" inQuery:query];
 
+    NSLog(@"%d",[query2 findObjects].count);
+    
     PFQuery *query3 = [PFQuery queryWithClassName:@"FeedItem"];
-    [query3 whereKey:@"user" matchesKey:@"followed" inQuery:query2];
+    [query3 whereKey:@"user" matchesKey:@"objectId" inQuery:query2];
+    
+    NSLog(@"%@",[PFUser currentUser].username);
+
 
     [query3 findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if(error) {
