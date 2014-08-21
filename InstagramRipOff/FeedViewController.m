@@ -36,6 +36,8 @@
     FeedTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"feedTableCell"];
     PFObject *feedItem = self.feedItems[indexPath.row];
     cell.feedDescriptionLabel.text = feedItem[@"description"];
+    cell.timePostedLabel.text = feedItem.createdAt.description;
+
     PFFile *feedImage = feedItem[@"feedPhoto"];
     cell.feedImage.image = [UIImage imageNamed:@"placeholder.png"];
     [feedImage getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
@@ -43,7 +45,27 @@
             cell.feedImage.image = [UIImage imageWithData:data];
         }
     }];
-    PFUser *user = feedItem[@"user"];
+
+
+    PFQuery *userQuery = [PFQuery queryWithClassName:@"User"];
+    [userQuery whereKey:@"objectId" equalTo:feedItem[@"user"]];
+    NSLog(@"user: %@", feedItem[@"user"]);
+    [userQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if(!error) {
+            PFUser *user = objects.firstObject;
+            NSLog(@"username: %@", user.username);
+        }
+    }];
+
+
+    /* cell.usernameLabel.text = user.username;
+    cell.userProfImage.image = [UIImage imageNamed:@"placeholder.png"];
+    PFFile *profImage = user[@"profilePicture"];
+    [profImage getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+        if (!error) {
+            cell.userProfImage.image = [UIImage imageWithData:data];
+        }
+    }]; */
     return cell;
 }
 
@@ -83,7 +105,7 @@
         if(error) {
             NSLog(@"%@", [error userInfo]);
         } else {
-            NSLog(@"%@", objects);
+//            NSLog(@"%@", objects);
             self.feedItems = objects;
             [self.feedTable reloadData];
         }
