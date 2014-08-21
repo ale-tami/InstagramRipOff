@@ -38,6 +38,8 @@
     [query2 whereKey:@"objectId" notEqualTo:[PFUser currentUser].objectId];
     [query2 whereKey:@"objectId" doesNotMatchKey:@"followed" inQuery:query];
     
+//    PFQuery *query3 = [PFQuery queryWithClassName:@"FeedItem"];
+//    [query3 whereKey:@"user" matchesKey:@"followed" inQuery:query2];
     
     self.users = [query2 findObjects:&error];
     
