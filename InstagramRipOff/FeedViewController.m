@@ -64,7 +64,7 @@
 //    PFQuery *query3 = [PFQuery queryWithClassName:@"FeedItem"];
 //    [query3 whereKey:@"user" matchesKey:@"followed" inQuery:query2];
 
-    PFQuery *query = [PFQuery queryWithClassName:@"FollowingUser"];
+    /*PFQuery *query = [PFQuery queryWithClassName:@"FollowingUser"];
     [query whereKey:@"follower" equalTo:[PFUser currentUser]];
 
     PFQuery *query2 = [PFUser query];
@@ -73,7 +73,13 @@
     PFQuery *query3 = [PFQuery queryWithClassName:@"FeedItem"];
     [query3 whereKey:@"user" matchesKey:@"followed" inQuery:query2];
 
-    [query3 findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+
+    PFQuery *query = [PFQuery queryWithClassName:@"FeedItem"];
+    PFQuery *query2 = [PFUser query];
+    [query2 whereKey:@"objectId" matchesKey:@"followed" inQuery:query]; */
+
+    PFQuery *query = [PFQuery queryWithClassName:@"FeedItem"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if(error) {
             NSLog(@"%@", [error userInfo]);
         } else {
@@ -83,7 +89,7 @@
         }
     }];
 
-    //    PFQuery *query = [PFQuery queryWithClassName:@"FeedItem"];
+    //
 
 //    PFQuery *query = [PFQuery queryWithClassName:@"FollowingUser"];
 //    [query whereKey:@"follower" equalTo:[PFUser currentUser] ];
