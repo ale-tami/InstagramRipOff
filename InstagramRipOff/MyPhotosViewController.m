@@ -8,12 +8,57 @@
 
 #import "MyPhotosViewController.h"
 
-@interface MyPhotosViewController ()
+@interface MyPhotosViewController () <UICollectionViewDelegate, UICollectionViewDataSource>
+
 @property (strong, nonatomic) IBOutlet UICollectionView *myPhotosCollectionView;
 
+@property (strong, nonatomic) NSMutableArray * photos;
 @end
 
 @implementation MyPhotosViewController
+
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    self.photos = [[NSMutableArray alloc]init];
+
+}
+
+
+-(void)viewDidAppear:(BOOL)animated{
+    
+    [self.photos removeAllObjects];
+    
+    PFUser *currentUser = [ PFUser currentUser];
+    
+    PFQuery *query = [PFQuery queryWithClassName:@"FeedItem"];
+    [query whereKey:@"user" equalTo:currentUser];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        
+        if (!error) {
+            
+            NSLog(@"Successfully retrieved %lu scores.", (unsigned long)objects.count);
+            for (PFObject *object in objects) {
+                
+                PFFile *imageFile = [object objectForKey:@"feedPhoto"];
+                [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+                    if (!error) {
+                        UIImage *image = [UIImage imageWithData:data];
+                        [self.photos addObject: image];
+                        [self.myPhotosCollectionView reloadData];
+                        
+                    }
+                }];
+                
+            }
+        } else {
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
+}
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -24,27 +69,29 @@
     return self;
 }
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
-}
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+#pragma mark - UICollectionView Delegate
+
+-(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+    
+    return self.photos.count;
 }
-*/
+
+-(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"myPhotosFeedCell" forIndexPath:indexPath];
+    
+    cell.backgroundView = [[UIImageView alloc] initWithImage:[self.photos objectAtIndex:indexPath.row]];
+    
+    return cell;
+}
+
+
 
 @end

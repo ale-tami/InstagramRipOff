@@ -11,6 +11,7 @@
 @interface TakePhotoViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 @property NSArray *user;
 @property UIImagePickerController *picker;
+@property (strong, nonatomic) IBOutlet UITextView *photoDescription;
 @end
 
 @implementation TakePhotoViewController
@@ -29,17 +30,10 @@
 {
     [super viewDidAppear:animated];
 
-//    PFQuery *query = [PFQuery queryWithClassName:@"User"];
-//    [query whereKey:@"username" equalTo:@"cmeats"];
-//    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-//        if (error) {
-//            NSLog(@"%@", [error userInfo]);
-//        } else {
-//            NSLog(@"%@", objects);
-//    //        self.user = objects[0];
-//            [self presentViewController:self.picker animated:YES completion:nil];
-//        }
-//    }];
+
+}
+- (IBAction)onUploadPhoto:(UIButton *)sender
+{
     [self presentViewController:self.picker animated:YES completion:nil];
 }
 
@@ -52,12 +46,13 @@
     PFFile *imageFile = [PFFile fileWithName:@"feedPhoto" data:imageData];
     feedItem[@"feedPhoto"] = imageFile;
     feedItem[@"user"] = [PFUser currentUser];
+    feedItem[@"description"] = self.photoDescription.text;
     [feedItem saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (error) {
             NSLog(@"%@", [error userInfo]);
         } else {
             [self dismissViewControllerAnimated:YES completion:nil];
-            self.tabBarController.selectedIndex = 1;
+            self.photoDescription.text = @"";
         }
     }];
 
