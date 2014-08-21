@@ -10,4 +10,6 @@
 
 @interface ExploreCollectionViewCell : UICollectionViewCell
 
+@property PFUser *user;
+
 @end

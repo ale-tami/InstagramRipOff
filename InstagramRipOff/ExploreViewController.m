@@ -23,12 +23,27 @@
 {
     [super viewDidLoad];
     
-    PFQuery *query = [PFQuery queryWithClassName:@"User"];
+    [self performSelectorInBackground:@selector(makeSearch) withObject:nil];
     
-    self.users = [query findObjects];
-    // Do any additional setup after loading the view.
+}
+
+- (void)makeSearch
+{
+    NSError *error = nil;
+    
+    PFQuery *query = [PFQuery queryWithClassName:@"FollowingUser"];
+    [query whereKey:@"follower" equalTo:[PFUser currentUser] ];
+    
+    PFQuery *query2 = [PFUser query];
+    [query2 whereKey:@"objectId" notEqualTo:[PFUser currentUser].objectId];
+    [query2 whereKey:@"objectId" doesNotMatchKey:@"followed" inQuery:query];
     
     
+    self.users = [query2 findObjects:&error];
+    
+    NSLog(@"%@", error);
+    
+    [self.exploreCollectionView reloadData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -37,6 +52,19 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+- (void) loadImageAsynchForCell: (ExploreCollectionViewCell*) cell
+{
+    
+    PFFile *file = [cell.user objectForKey:@"profilePicture"];
+    
+    if (file) {
+        cell.backgroundView = [[UIImageView alloc] initWithImage: [UIImage imageWithData:[file getData]]] ;
+    } else {
+        cell.backgroundView = [[UIImageView alloc] initWithImage: [UIImage imageNamed:@"placeholder.png"]] ;
+    }
+
+}
 
 - (NSInteger) collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
@@ -49,9 +77,9 @@
     
     PFUser *user = [self.users objectAtIndex:indexPath.row];
     
-   // PFFile *file = [user objectForKey:@"profilePicture"];
+    cell.user = user;
     
-    [cell.backgroundView addSubview: [[UIImageView alloc] initWithImage: [UIImage imageWithData:[user objectForKey:@"profilePicture"]]] ];
+    [self performSelectorInBackground:@selector(loadImageAsynchForCell:) withObject:cell];
     
     return cell;
 }

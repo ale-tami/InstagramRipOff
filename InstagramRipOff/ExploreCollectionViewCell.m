@@ -21,7 +21,15 @@
 
 - (IBAction)onFollowUserTapped:(UIButton *)sender
 {
+    //use constants for keys
+    PFObject *object = [PFObject objectWithClassName:@"FollowingUser"];
     
+    [object setObject:[PFUser currentUser]  forKey:@"follower"];
+    [object setObject:self.user  forKey:@"followed"];
+    
+    [object saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        sender.titleLabel.text = @"Following";
+    }];
 }
 
 
