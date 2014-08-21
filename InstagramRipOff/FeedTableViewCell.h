@@ -14,7 +14,9 @@
 @property (strong, nonatomic) IBOutlet UILabel *timePostedLabel;
 @property (strong, nonatomic) IBOutlet UIImageView *feedImage;
 @property (strong, nonatomic) IBOutlet UILabel *likesLabel;
-@property (strong, nonatomic) IBOutlet UILabel *feedTagsLabel;
+
+@property (strong, nonatomic) IBOutlet UILabel *feedDescriptionLabel;
+
 @property (strong, nonatomic) IBOutlet UILabel *feedCommentsLabel;
 
 @end
