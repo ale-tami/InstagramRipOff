@@ -11,5 +11,6 @@
 @interface ExploreCollectionViewCell : UICollectionViewCell
 
 @property PFUser *user;
+@property PFObject *photo;
 
 @end

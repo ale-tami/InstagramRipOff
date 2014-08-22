@@ -168,7 +168,7 @@
                                     <outlet property="delegate" destination="ILz-ec-zan" id="hCy-In-ddQ"/>
                                 </connections>
                             </collectionView>
-                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p7d-tz-hel">
+                            <searchBar contentMode="redraw" fixedFrame="YES" placeholder="Enter username or #tag" translatesAutoresizingMaskIntoConstraints="NO" id="p7d-tz-hel">
                                 <rect key="frame" x="0.0" y="66" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <textInputTraits key="textInputTraits"/>
